@@ -54,6 +54,10 @@ android {
 }
 
 dependencies {
+    // Aligns every transitive kotlin-stdlib* to one version. Without this, kotlin-stdlib 1.8+
+    // collides with the older kotlin-stdlib-jdk7/jdk8 artifacts (duplicate classes at dex time).
+    implementation platform('org.jetbrains.kotlin:kotlin-bom:1.9.24')
+
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.webkit:webkit:1.11.0'
     implementation 'androidx.documentfile:documentfile:1.0.1'
