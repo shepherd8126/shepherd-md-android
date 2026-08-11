@@ -1,0 +1,17 @@
+# build outputs
+build/
+app/build/
+out/
+.gradle/
+local.properties
+
+# signing material must NEVER be committed (it lives outside this repo, in _signing/)
+*.jks
+*.keystore
+
+# misc
+*.log
+.idea/
+.DS_Store
+desktop.ini
+Thumbs.db

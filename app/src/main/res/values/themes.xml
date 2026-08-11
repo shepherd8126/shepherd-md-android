@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DayNight so the system bars follow the phone's light/dark setting, matching the web UI's auto theme -->
+    <style name="Theme.ShepherdMd" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@android:color/background_dark</item>
+    </style>
+</resources>
