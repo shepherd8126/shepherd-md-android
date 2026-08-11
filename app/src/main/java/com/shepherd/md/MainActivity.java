@@ -307,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
 
         @JavascriptInterface
         public void pickFolder() {
-            runOnUiThread(() -> { try { pickTree.launch(null); } catch (Exception ignored) { } });
+            runOnUiThread(() -> { try { pickTree.launch((Uri) null); } catch (Exception ignored) { } });
         }
 
         @JavascriptInterface

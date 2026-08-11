@@ -47,6 +47,12 @@ android {
         }
     }
 
+    // AGP 8 no longer generates BuildConfig unless asked; the app reads VERSION_NAME from it
+    // to decide whether the release feed is offering something newer.
+    buildFeatures {
+        buildConfig true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
