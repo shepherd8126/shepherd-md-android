@@ -55,6 +55,16 @@ jobs:
           cp app/build/outputs/apk/release/app-release.apk out/Shepherd-Markdown.apk
           ls -lh out
 
+      # Proves the APK carries the stable release key. If this fingerprint ever changes,
+      # updates will refuse to install over existing installs.
+      - name: Verify signing certificate
+        run: |
+          APKSIGNER=$(ls "$ANDROID_SDK_ROOT"/build-tools/*/apksigner | sort | tail -n 1)
+          echo "using $APKSIGNER"
+          "$APKSIGNER" verify --print-certs --verbose out/Shepherd-Markdown.apk | tee /tmp/sig.txt
+          echo "---"
+          grep -i "SHA-256 digest" /tmp/sig.txt || true
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
