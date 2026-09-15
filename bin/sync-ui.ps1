@@ -10,7 +10,7 @@
 #>
 $ErrorActionPreference = 'Stop'
 $Android = Split-Path -Parent $PSScriptRoot
-$Src     = "C:\Shepherd\Work Stuff\App Builds\Shepherd MD"
+$Src     = Join-Path (Split-Path -Parent $Android) 'Shepherd MD'
 $Assets  = Join-Path $Android 'app\src\main\assets'
 
 New-Item -ItemType Directory -Force -Path (Join-Path $Assets 'public') | Out-Null
